@@ -1,6 +1,9 @@
 export default function Login() {
   return (
-    <div>
+    <div className="w-full h-full flex flex-col justify-center items-center">
+        <h1 className="font-bold text-2xl mb-10">
+            Sign in to your account
+        </h1>
         <form className="max-w-sm mx-auto">
         <div className="mb-5">
             <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
