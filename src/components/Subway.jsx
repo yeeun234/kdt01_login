@@ -48,6 +48,10 @@ export default function Subway() {
                 <div>
                     ({item})
                 </div>
+                <div>
+                    {subwayData[item]} {scode[item]["unit"]}
+                </div>
+                
             </div>
             )
         });
