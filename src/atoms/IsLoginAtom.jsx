@@ -1,7 +1,5 @@
-export default function IsLoginAtom() {
-  return (
-    <div>
-      dd
-    </div>
-  )
-}
+import { atom } from "jotai"
+
+export const IsLoginAtom = atom(false);
+
+
