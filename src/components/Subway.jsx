@@ -1,15 +1,25 @@
-import React, { use } from 'react'
+import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import sarea from '../db/sarea.json'
 import scode from '../db/scode.json'
 import TailSelect from '../ui/TailSelect'
 import { useRef } from 'react'  
+import { useAtom } from "jotai";
+import { IsLoginAtom } from "../atoms/IsLoginAtom";
+import { Navigate } from "react-router-dom";
+
 export default function Subway() {
+    const [isLogin] = useAtom(IsLoginAtom);
+
+   
     const selectRef = useRef();
     const ops = sarea.map((item) => {
         return <option value={item.코드} key={item.코드}>{item.측정소}</option>
     })
+
+    
+
     
     const [subwayData, setSubwayData] = useState();
     const [tags,setTags] = useState();
@@ -49,7 +59,7 @@ export default function Subway() {
                     ({item})
                 </div>
                 <div>
-                    {subwayData[item]} {scode[item]["unit"]}
+                    {subwayData[item]} {subwayData[item] =="-" ? "" : scode[item]["unit"]}
                 </div>
                 
             </div>
@@ -65,6 +75,11 @@ export default function Subway() {
     //         <div></div>
     //     });
     // },[selectRef.current.value]);
+
+    if (!isLogin) {
+        return <Navigate to="/" replace />;
+        }
+
     
   return (
     <div className='flex flex-col justify-start items-center'>

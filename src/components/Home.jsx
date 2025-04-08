@@ -12,14 +12,14 @@ export default function Home() {
     //session storage is used to store the value only for the current session.
     // When the session ends, the value is lost.
     useEffect(() => {
-        const tm = localStorage.getItem("email")
-        if(tm !== null){
+        
+        if(localStorage.getItem("email")){
             setLogin(true);
         }
     },[]);
     return (
         <div className="w-full h-full flex justify-center items-center">
-           {isLogin ? `Hi` : <Login/>}
+           {isLogin ? `${localStorage.getItem('email')}님이 로그인 하셨습니다. `: <Login/>}
         </div>
     )
 }
