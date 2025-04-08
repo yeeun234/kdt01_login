@@ -34,24 +34,27 @@ export default function Subway() {
     };
     
 
-    // useEffect(()=>{
-    //     if(subwayData)
-    //         return;
-    //     let tm = Object.keys(scode);
+    useEffect(()=>{
+        if(!subwayData)
+            return;
+        let tm = Object.keys(scode);
         
-    //     console.log(tm);
-    //     tm = tm.map((item)=>{
-    //         <div key={item}>
-    //             <div >
-    //                 {scode.item["name"]}
-    //             </div>
-    //             <div>
-    //                 ({item})
-    //             </div>
-    //         </div>
-    //     });
-    //     // setSubwayData(tm);
-    // },[subwayData]);
+        console.log(tm);
+        tm = tm.map((item)=>{
+            return(<div key={item}>
+                <div >
+                    {scode[item].name}
+                </div>
+                <div>
+                    ({item})
+                </div>
+            </div>
+            )
+        });
+
+        setTags(tm);
+        // setSubwayData(tm);
+    },[subwayData]);
 
     // useEffect(()=>{
     //     const tm = data.map((item)=>{
@@ -67,7 +70,7 @@ export default function Subway() {
         </select>
         </div>
         <div className="w-full grid grid-cols-9 gap-4 mt-10">  
-            dd
+            {tags}
         </div>
     </div>
   )
