@@ -3,8 +3,10 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import Login from './components/Login'
 import Subway from './components/Subway'
+import TodoList from './components/TodoList'
 import { Route, Routes } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
+
 function App() {
 
 
@@ -20,6 +22,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/Subway" element={<Subway/>}/>
+          <Route path="/TodoList" element={<TodoList/>}/>
         </Routes>
       </main>
       <footer className='w-full h-20  flex justify-center items-center bg-green-100'>

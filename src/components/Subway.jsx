@@ -43,7 +43,10 @@ export default function Subway() {
         fetchSubwayData(selectRef.current.value);  
     };
     
-
+    // useEffect(()=>{
+    //     fetchSubwayData("201193");
+    // },[])
+    
     useEffect(()=>{
         if(!subwayData)
             return;
@@ -51,14 +54,14 @@ export default function Subway() {
         
         console.log(tm);
         tm = tm.map((item)=>{
-            return(<div key={item}>
+            return(<div  key={item}>
                 <div >
                     {scode[item].name}
                 </div>
                 <div>
                     ({item})
                 </div>
-                <div>
+                <div >
                     {subwayData[item]} {subwayData[item] =="-" ? "" : scode[item]["unit"]}
                 </div>
                 
@@ -70,12 +73,6 @@ export default function Subway() {
         // setSubwayData(tm);
     },[subwayData]);
 
-    // useEffect(()=>{
-    //     const tm = data.map((item)=>{
-    //         <div></div>
-    //     });
-    // },[selectRef.current.value]);
-
     if (!isLogin) {
         return <Navigate to="/" replace />;
         }
@@ -84,12 +81,12 @@ export default function Subway() {
   return (
     <div className='flex flex-col justify-start items-center'>
         <div>
-        <select id='sel1' ref={selectRef} onChange={handleChange} className="mb-2 mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+        <select id='sel1' ref={selectRef} onChange={handleChange} className="mb-2 mt-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                  {ops} 
         </select>
         </div>
-        <div className="w-full grid grid-cols-9 gap-4 mt-10">  
-            {tags}
+        <div className="w-full grid grid-cols-9 gap-4 mt-10 border border-gray-300 p-4 rounded-2xl">  
+             { tags }
         </div>
     </div>
   )
