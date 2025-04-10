@@ -1,3 +1,4 @@
+import TailButton from "../ui/TailButton"
 export default function TodoForm() {
  
   const handleClick = (e) => {
@@ -11,7 +12,7 @@ export default function TodoForm() {
   return (
     <form className="w-10/12 grid grid-cols-5 gap-4">
       <select id="sel1"  
-        className="bg-gray-50 border border-gray-300
+        className="bg-gray-50 border border-gray-300 text-center
                                text-gray-900 text-sm rounded-lg
                                 focus:ring-blue-500 focus:border-blue-500 
                                 block w-full p-2 m-2">
