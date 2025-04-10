@@ -16,7 +16,7 @@ export default function TodoList() {
     getData();
   } ,[]);
   return (
-    <div className="w-8/10 flex flex-col justify-start items-center">
+    <div className="w-10/12 flex flex-col justify-start items-center">
       <TodoForm/>
       {tdata && tdata.map(item => <TodoItem key={item.id} todos={item}/>)}
     </div>
