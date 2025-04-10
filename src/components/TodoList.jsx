@@ -15,6 +15,8 @@ export default function TodoList() {
     getData();
   } ,[]);
   return (
-    <div><TodoItem todos={tdata}/></div>
+    <div>
+      {tdata.map(item => <TodoItem key={item.id} todos={item}/>)}
+    </div>
   )
 }

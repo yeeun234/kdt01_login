@@ -6,7 +6,7 @@ export default function TodoItem({todos}) {
                     m-1 px-4 py-1">
       <div>
         <span>
-           d
+           {todos.text}
         </span>
         <span></span>
       </div>
