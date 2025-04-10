@@ -1,24 +1,19 @@
-import { useEffect,useState } from "react"
+import { useEffect } from "react"
 import axios from "axios"
-import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem"
-export default function TodoList() {
-    const [todos,SetTodos] = useState([]);
-    const baseurl="http://localhost:3005/todos";
-    const getFetch =async ()=>{
-        const resp = await axios.get(baseurl);
-        const data = resp.data;
-        console.log("data",data);
-        SetTodos(data);
-    }
+ 
 
-    useEffect(()=>{
-        getFetch();
-    },[]);
+const baseurl = "http://localhost:3005/todos"
+export default function TodoList() {
+
+  const getData = async() => {
+    const resp = await axios.get(baseurl) ;
+    console.log(resp.data)
+  }
+
+  useEffect(()=>{
+    getData();
+  } ,[]);
   return (
-    <div className="w-full h-full bg-amber-100 flex flex-col justify-start items-center">
-      <TodoForm/>
-      <TodoItem insert={todos}/>
-    </div>
+    <div>TodoList</div>
   )
 }
