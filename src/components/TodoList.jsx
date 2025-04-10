@@ -16,7 +16,7 @@ export default function TodoList() {
   } ,[]);
   return (
     <div>
-      {tdata.map(item => <TodoItem key={item.id} todos={item}/>)}
+      {tdata && tdata.map(item => <TodoItem key={item.id} todos={item}/>)}
     </div>
   )
 }
